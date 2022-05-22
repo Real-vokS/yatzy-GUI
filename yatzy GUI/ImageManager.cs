@@ -10,7 +10,11 @@ namespace yatzy_GUI
 {
     class ImageManager
     {
-        public void setImage(int v, Image image)
+
+        private static List<Image> images = new List<Image>();
+
+
+        public static void setImage(int v, Image image)
         {
             BitmapImage bi = new BitmapImage();
 
@@ -18,6 +22,12 @@ namespace yatzy_GUI
             bi.UriSource = new Uri("/img/" + v + ".png", UriKind.Relative);
             bi.EndInit();
             image.Source = bi;
+        }
+
+        public static List<Image> Images
+        {
+            get => images;
+            set => images = value;
         }
     }
 }
